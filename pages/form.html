@@ -72,6 +72,14 @@
                 emailError.textContent="";
                 else emailError.textContent = "email is Incorrect";
         });
+        const telephone = document.querySelector('#telephone');
+        const telephoneError = document.querySelector('.telephone-error');
+        text.addEventListener('input', function() {
+            let telephoneRegex = RegExp('^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$');
+            if (telephoneRegex.test(telephone.value))
+            telephoneError.textContent="";
+                else telephoneError.textContent = "telephone is Incorrect";
+        });
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
         output.textContent = salary.value;
