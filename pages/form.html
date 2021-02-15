@@ -67,23 +67,23 @@
         });
         const email = document.querySelector('#email');
         const emailError = document.querySelector('.email-error');
-        text.addEventListener('input', function() {
+        email.addEventListener('input', function() {
             let emailRegex = RegExp('^[a-zA-Z]{3}\.[a-zA-Z]{1,}@[a-zA-Z]{2}\.[a-zA-Z]{2}\.[a-zA-Z]{1,}$');
             if (emailRegex.test(email.value))
-                emailError.textContent="";
+            emailError.textContent="";
                 else emailError.textContent = "email is Incorrect";
         });
         const telephone = document.querySelector('#telephone');
         const telephoneError = document.querySelector('.telephone-error');
-        text.addEventListener('input', function() {
-            let telephoneRegex = RegExp('^[1-9]{2}\s{1}[0-9]{1}[0-9]{9}$');
+        telephone.addEventListener('input', function() {
+            let telephoneRegex = RegExp('^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$');
             if (telephoneRegex.test(telephone.value))
             telephoneError.textContent="";
                 else telephoneError.textContent = "telephone is Incorrect";
         });
         const pwd = document.querySelector('#pwd');
         const pwdError = document.querySelector('.pwd-error');
-        text.addEventListener('input', function() {
+        pwd.addEventListener('input', function() {
             let pwdRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}');
             if (pwdRegex.test(pwd.value))
             pwdError.textContent="";
