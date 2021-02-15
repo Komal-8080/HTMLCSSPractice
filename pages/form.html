@@ -17,6 +17,7 @@
         <div>
             <label for="pwd">password input type: </label>
             <input type="password" id="pwd" name="pwd" required>
+            <error-output class="pwd-error" for="pwd"></error-output>
         </div>
         <div>
             <label for="email">email input type: </label>
@@ -75,10 +76,18 @@
         const telephone = document.querySelector('#telephone');
         const telephoneError = document.querySelector('.telephone-error');
         text.addEventListener('input', function() {
-            let telephoneRegex = RegExp('^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$');
+            let telephoneRegex = RegExp('^[1-9]{2}\s{1}[0-9]{1}[0-9]{9}$');
             if (telephoneRegex.test(telephone.value))
             telephoneError.textContent="";
                 else telephoneError.textContent = "telephone is Incorrect";
+        });
+        const pwd = document.querySelector('#pwd');
+        const pwdError = document.querySelector('.pwd-error');
+        text.addEventListener('input', function() {
+            let pwdRegex = RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}');
+            if (pwdRegex.test(pwd.value))
+            pwdError.textContent="";
+                else pwdError.textContent = "Password is Incorrect";
         });
         const salary = document.querySelector('#salary');
         const output = document.querySelector('.salary-output');
